@@ -148,5 +148,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user)
+    {
+        // Check if user not null, then set text views with all details
+        // like name, token, id, etc
+        // if null then call sign up/ sign in screen?
+    }
 
 }
