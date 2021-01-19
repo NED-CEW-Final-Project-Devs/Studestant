@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484204865351",
+    "project_id": "studestant",
+    "storage_bucket": "studestant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484204865351:android:38c665c1bfb80da0b80e62",
+        "android_client_info": {
+          "package_name": "com.ned_cew_final_project.studestant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484204865351-0l33f61jn2dj19jden72vslvmh6mb90c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkZhY7GV1lst0QUdY-CeggU9Uct-S27GM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484204865351-0l33f61jn2dj19jden72vslvmh6mb90c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
