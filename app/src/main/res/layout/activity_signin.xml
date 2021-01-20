@@ -8,17 +8,8 @@
     tools:context=".SigninActivity"
     android:orientation="vertical" >
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:hint="Email address"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:hint="Password" />
+
 
         <Button
             android:id="@+id/btn_signin"
