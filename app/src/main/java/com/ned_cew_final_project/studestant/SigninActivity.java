@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignupActivity extends AppCompatActivity {
+public class SigninActivity extends AppCompatActivity {
     EditText email_edittxt;
     EditText password_edittxt;
     Button signup_btn;
@@ -29,66 +29,64 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_signin);
 
         mAuth = FirebaseAuth.getInstance();  // get an instance of firebaseauth
 
         email_edittxt = findViewById(R.id.email);
         password_edittxt = findViewById(R.id.password);
-        signup_btn = findViewById(R.id.btn_signup);
         signin_btn = findViewById(R.id.btn_signin);
+        signup_btn = findViewById(R.id.btn_signup);
 
-        signup_btn.setOnClickListener(new View.OnClickListener() {
+        signin_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = email_edittxt.getText().toString();
                 String password = password_edittxt.getText().toString();
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(SignupActivity.this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SigninActivity.this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
                 } else {
-                    createAccount(email_edittxt.getText().toString(), password_edittxt.getText().toString());
+                    signIn(email_edittxt.getText().toString(), password_edittxt.getText().toString());
                 }
             }
         });
 
-        signin_btn.setOnClickListener(new View.OnClickListener() {
+        signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignupActivity.this, SigninActivity.class);
+                Intent intent = new Intent(SigninActivity.this, SignupActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
 
-    private void createAccount(String email, String password) {
-//        if (!validateForm())
-//        {
-//            return;
-//        }
-//        if (email.equals("") || password.equals("")){
-//            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+
+    private void signIn(String email, String password) {
+        Log.d(TAG_SIGNIN, "signIn:" + email);
+//        if (!validateForm()) {
 //            return;
 //        }
 
-        // create new user with authentication instance's createUserWithEmailAndPassword method
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG_SIGNIN, "createUserWithEmail:success");
-                            Toast.makeText(SignupActivity.this, "Authentication Success.", Toast.LENGTH_SHORT).show();
+                            // Sign in success, update UI with the signed-in User's Information
+                            Log.d(TAG_SIGNIN, "signnWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 //                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG_SIGNIN, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignupActivity.this, "Authentication Failed.", Toast.LENGTH_SHORT).show();
-                            //                            updateUI(null);
+                        }
+                        else
+                        {
+                            // IF sign-in fails, display message to user
+                            Log.w(TAG_SIGNIN, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(SigninActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
                         }
                     }
+
                 });
     }
 }
