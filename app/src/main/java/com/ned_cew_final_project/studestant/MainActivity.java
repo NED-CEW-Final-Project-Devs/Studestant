@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;  // firebase authentication instance
 
     Button logout_btn;
+    TextView user_info_txtview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();  // get an instance of firebaseauth
         logout_btn = findViewById(R.id.btn_logout);
+        user_info_txtview = findViewById(R.id.user_info);
 
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //            finish();
             Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
+            String user_name = current_user.getDisplayName();
+            String user_email = current_user.getEmail();
+
+            user_info_txtview.setText(String.format("Name: %s\nEmail: %s", user_name, user_email));
+
 
         }
     }

@@ -46,6 +46,7 @@ public class SigninActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                     Toast.makeText(SigninActivity.this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
                 } else {
+                    Toast.makeText(SigninActivity.this, email + password, Toast.LENGTH_SHORT).show();
                     signIn(email_edittxt.getText().toString(), password_edittxt.getText().toString());
                 }
             }
@@ -63,6 +64,7 @@ public class SigninActivity extends AppCompatActivity {
 
 
     private void signIn(String email, String password) {
+        Toast.makeText(this, "HEREEE", Toast.LENGTH_LONG).show();
         Log.d(TAG_SIGNIN, "signIn:" + email);
 //        if (!validateForm()) {
 //            return;
@@ -74,15 +76,15 @@ public class SigninActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in User's Information
-                            Log.d(TAG_SIGNIN, "signnWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
+                            Log.d(TAG_SIGNIN, "signinWithEmail:success");
+                            Toast.makeText(SigninActivity.this, "signed in!", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
                         else
                         {
                             // IF sign-in fails, display message to user
                             Log.w(TAG_SIGNIN, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(SigninActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SigninActivity.this, "Sign in Failed", Toast.LENGTH_SHORT).show();
 //                            updateUI(null);
                         }
                     }
