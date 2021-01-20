@@ -73,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
         updateUI();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        updateUI();
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        updateUI();
+//    }
 
     private void updateUI() {
         FirebaseUser current_user = mAuth.getCurrentUser();
@@ -94,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
             logout_btn.setVisibility(View.VISIBLE);
             login_btn.setVisibility(View.GONE);
             user_info_txtview.setText(String.format("Logged in as:\nName: %s\nEmail: %s", user_name, user_email));
+//            try {
+//                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//                startActivity(intent);
+//                finish();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+
         }
     }
 
@@ -110,13 +118,16 @@ public class MainActivity extends AppCompatActivity {
             {
                 // Successfully signed in
                 Toast.makeText(this, "Login Success", Toast.LENGTH_LONG).show();
-                //                String user_name = current_user.getDisplayName();
-//                String user_email = current_user.getEmail();
-//                user_info_txtview.setText(String.format("Name: %s\nEmail: %s", user_name, user_email));
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+//                finish();
             }
             else
             {
-                Toast.makeText(this, "Login FAIL", Toast.LENGTH_LONG).show();
+                if (response == null)
+                {
+                    Toast.makeText(this, "Login Cancelled", Toast.LENGTH_LONG).show();
+                }
                 // Toast.makeText(this, response.getError().getErrorCode(), Toast.LENGTH_SHORT).show();
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
@@ -132,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logIn(View view) {
 
-        // settings for enabling email lin sign in
+        // settings for enabling email link sign in
         ActionCodeSettings actionCodeSettings = ActionCodeSettings.newBuilder()
                 .setAndroidPackageName("com.ned_cew_final_project.studestant", /* installIfNotAvailable= */ true,
                         /* minimumVersion= */ null)
@@ -185,6 +196,12 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        });  // error
+    }
+
+    public void start(View view) {
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
     }
 
 

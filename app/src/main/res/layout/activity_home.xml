@@ -49,4 +49,11 @@
         android:text="@string/pomodoro_timer"
         android:layout_gravity="center_horizontal" />
 
+<!--    <Button-->
+<!--        android:id="@+id/btn_logout_home"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:text="Log Out" />-->
+
 </LinearLayout>

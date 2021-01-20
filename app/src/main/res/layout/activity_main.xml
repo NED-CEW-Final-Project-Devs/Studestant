@@ -34,4 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="placeholder"/>
+
+    <Button
+        android:id="@+id/btn_launch_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:onClick="start" />
 </LinearLayout>

@@ -9,23 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity"/>
         <activity android:name=".SigninActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".FormulasCheatsheetActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".PomodoroTimerActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".WikipediaSearchActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".TodoListActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
