@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
 
         // checking if a user is signed in and calling signin activity if not signed in
         mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
