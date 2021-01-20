@@ -49,4 +49,20 @@
         android:text="@string/pomodoro_timer"
         android:layout_gravity="center_horizontal" />
 
+
+    <TextView
+        android:id="@+id/txtview_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Info:" />
+
+
+    <Button
+        android:id="@+id/btn_signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign out"
+        android:layout_gravity="end" />
+
+
 </LinearLayout>
