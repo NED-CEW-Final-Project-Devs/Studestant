@@ -84,8 +84,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
+//                Auth.GoogleSignInApi.signOut(apiClient);  // check this for google signout problems
             }
-        });
+        })
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build(),
