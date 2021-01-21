@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ErrorCodes;
+import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_signout;
 
     FirebaseAuth mAuth;  // firebase authentication instance
+    FirebaseAuth.AuthStateListener mAuthStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,36 +86,46 @@ public class MainActivity extends AppCompatActivity {
                 mAuth.signOut();
             }
         });
-        updateUI();
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+        List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.EmailBuilder().build(),
+//                new AuthUI.IdpConfig.PhoneBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build());
 
-        // checking if a user is signed in and calling signin activity if not signed in
-        mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (mAuth.getCurrentUser() == null)
+                FirebaseUser current_user = mAuth.getCurrentUser();
+                if (current_user == null)  // if user isn't logged in
                 {
-                    List<AuthUI.IdpConfig> providers = Arrays.asList(
-                            new AuthUI.IdpConfig.EmailBuilder().build(),
-                            new AuthUI.IdpConfig.PhoneBuilder().build(),
-                            new AuthUI.IdpConfig.GoogleBuilder().build());
-
-                    // Create and launch sign-in intent
+                    // Create and launch sign-in activity intent
                     startActivityForResult(
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
                                     .setAvailableProviders(providers)
                                     .setTheme(R.style.Theme_Studestant)
+                                    .setIsSmartLockEnabled(false)
                                     .build(),
                             RC_SIGN_IN);
+                    //.setLogo(R.drawable.studestant_logo_0)
                 }
                 updateUI();
             }
-        });
+        };
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // adding authStateListener
+        mAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // removing authstateListener
+        mAuth.removeAuthStateListener(mAuthStateListener);
     }
 
     @Override
@@ -121,21 +134,31 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == RC_SIGN_IN)  // if result is from firebase signin activity
         {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Successfully signed in", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                Log.d("FirebaseAuthUi","Sign in failed.");
-                Toast.makeText(this, "Sign in failed", Toast.LENGTH_SHORT).show();
+                if (response == null)  // user pressed back on login screen
+                {
+                    finish(); // close the app
+                }
+//                Log.d("FirebaseAuthUi","Sign in failed.");
+//                Toast.makeText(this, "Sign in cancelled.", Toast.LENGTH_SHORT).show();
             }
-            updateUI();
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
     private void updateUI() {
-        FirebaseUser currentUser =mAuth.getCurrentUser();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null)  // if not logged in
         {
             txtview_userinfo.setText("User info:\nNot signed in");
