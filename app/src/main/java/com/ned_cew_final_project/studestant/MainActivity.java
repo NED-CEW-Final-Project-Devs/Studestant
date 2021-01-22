@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_wikipedia_search;
     Button btn_formulas_cheatsheet;
     Button btn_pomodoro_timer;
+    Button btn_useful_links;
     TextView txtview_userinfo;
     Button btn_signout;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         btn_wikipedia_search = findViewById(R.id.btn_wikipedia_search);
         btn_formulas_cheatsheet = findViewById(R.id.btn_formulas_cheatsheet);
         btn_pomodoro_timer = findViewById(R.id.btn_pomodoro_timer);
+        btn_useful_links = findViewById(R.id.btn_useful_links);
         txtview_userinfo = findViewById(R.id.txtview_userinfo);
         btn_signout = findViewById(R.id.btn_signout);
 
@@ -76,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PomodoroTimerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_useful_links.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UsefulLinks.class);
                 startActivity(intent);
             }
         });
