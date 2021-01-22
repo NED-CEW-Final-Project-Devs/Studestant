@@ -20,9 +20,9 @@ public class WikipediaSearchActivity extends AppCompatActivity {
     public void btnclick(View view) {
 
         EditText et_wiki= (EditText)findViewById(R.id.editText_wiki);
-        String et1=et_wiki.getText().toString();
+        String et_w=et_wiki.getText().toString();
 
-        String url= "https://en.wikipedia.org/wiki/" + et1;
+        String url= "https://en.wikipedia.org/wiki/" + et_w;
 
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
