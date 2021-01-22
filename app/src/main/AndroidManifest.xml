@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
-        <activity android:name=".FormulasCheatsheetActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".PomodoroTimerActivity"
+        <activity android:name=".UsefulLinks"></activity>
+        <activity
+            android:name=".FormulasCheatsheetActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".WikipediaSearchActivity"
+        <activity
+            android:name=".PomodoroTimerActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".TodoListActivity"
+        <activity
+            android:name=".WikipediaSearchActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TodoListActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
