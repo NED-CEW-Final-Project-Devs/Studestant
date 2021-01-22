@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 mAuth.signOut();
 //                Auth.GoogleSignInApi.signOut(apiClient);  // check this for google signout problems
             }
-        })
+        });
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build(),
@@ -146,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
                 {
                     finish(); // close the app
                 }
-//                Log.d("FirebaseAuthUi","Sign in failed.");
-//                Toast.makeText(this, "Sign in cancelled.", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -157,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
 
     private void updateUI() {
         FirebaseUser currentUser = mAuth.getCurrentUser();

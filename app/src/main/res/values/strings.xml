@@ -5,4 +5,5 @@
     <string name="pomodoro_timer">Pomodoro Timer</string>
     <string name="formulas_cheatsheet">Formulas Cheatsheet</string>
     <string name="home">Home</string>
+    <string name="sign_out">Sign out</string>
 </resources>
