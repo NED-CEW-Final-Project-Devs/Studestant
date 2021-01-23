@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
-        <activity android:name=".UsefulLinks"></activity>
+        <activity android:name=".TodoEditorActivity"
+            android:parentActivityName=".TodoListActivity" />
+        <activity
+            android:name=".TodoAdderActivity"
+            android:parentActivityName=".TodoListActivity" />
+        <activity
+            android:name=".TodoListActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".UsefulLinks"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FormulasCheatsheetActivity"
             android:parentActivityName=".MainActivity" />
@@ -20,9 +30,8 @@
             android:name=".WikipediaSearchActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".TodoListActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
