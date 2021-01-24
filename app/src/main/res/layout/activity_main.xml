@@ -129,9 +129,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:foregroundGravity="bottom"
-            android:textSize="17sp"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             android:text="@string/sign_out"
-            app:backgroundTint="@color/yellow" />
+            app:backgroundTint="@color/light_grey" />
 
 
     </RelativeLayout>
