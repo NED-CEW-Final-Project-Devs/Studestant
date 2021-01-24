@@ -9,10 +9,10 @@
 
     <TextView
         android:id="@+id/tv_basicformulas"
-        android:layout_width="407dp"
-        android:layout_height="45dp"
+        android:layout_width="404dp"
+        android:layout_height="54dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/teal_200"
         android:gravity="center_horizontal"
         android:padding="10dp"
@@ -21,94 +21,52 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/img_vol"
+        app:layout_constraintBottom_toTopOf="@+id/img_area"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/img_area"
-        android:layout_width="188dp"
-        android:layout_height="255dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="14dp"
         android:src="@drawable/bf1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_basicformulas" />
-
-    <TextView
-        android:id="@+id/tv_area"
-        android:layout_width="116dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="7dp"
-        android:background="@color/yellow"
-        android:text="AREA"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/img_area"
-        app:layout_constraintEnd_toStartOf="@+id/tv_volume"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_basicformulas"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/img_vol"
-        android:layout_width="120dp"
-        android:layout_height="257dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/bf2"
-        app:layout_constraintStart_toEndOf="@+id/img_area"
-        app:layout_constraintTop_toBottomOf="@+id/tv_basicformulas" />
-
-    <TextView
-        android:id="@+id/tv_volume"
-        android:layout_width="88dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginRight="46dp"
-        android:layout_marginBottom="7dp"
-        android:background="@color/yellow"
-        android:text="VOLUME"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/img_area"
+        app:layout_constraintBottom_toTopOf="@+id/img_squ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_area"
-        app:layout_constraintTop_toBottomOf="@+id/tv_basicformulas"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_basicformulas" />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/img_squ"
-        android:layout_width="284dp"
-        android:layout_height="208dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="63dp"
         android:src="@drawable/bf3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_square"
-        android:layout_width="102dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="292dp"
-        android:background="@color/yellow"
-        android:text="SQUARE"
-        android:textAlignment="center"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ne"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/img_area" />
+        app:layout_constraintTop_toBottomOf="@+id/img_area" />
+
+    <Button
+        android:id="@+id/btn_ne"
+        android:layout_width="134dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="25dp"
+        android:onClick="nex"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_squ" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
