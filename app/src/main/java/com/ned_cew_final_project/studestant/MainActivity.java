@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         btn_todo_list = findViewById(R.id.btn_todo_list);
         btn_wikipedia_search = findViewById(R.id.btn_wikipedia_search);
         btn_formulas_cheatsheet = findViewById(R.id.btn_formulas_cheatsheet);
@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.GoogleBuilder().build(),
                 new AuthUI.IdpConfig.EmailBuilder().build(),
-//                new AuthUI.IdpConfig.PhoneBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build());
+                new AuthUI.IdpConfig.PhoneBuilder().build());
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -115,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
                                     .createSignInIntentBuilder()
                                     .setAvailableProviders(providers)
                                     .setTheme(R.style.Theme_Studestant)
+                                    .setLogo(R.drawable.login)
                                     .setIsSmartLockEnabled(false)
                                     .build(),
                             RC_SIGN_IN);
-                    //.setLogo(R.drawable.studestant_logo_0)
                 }
                 updateUI();
             }
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 email = "Not available";
             }
             // set user name and email in text view
-            txtview_userinfo.setText(String.format("User info:\nName: %s\nEmail: %s", name, email));
+            txtview_userinfo.setText(String.format("Signed in as:\nName: %s\nEmail: %s", name, email));
         }
     }
 }
