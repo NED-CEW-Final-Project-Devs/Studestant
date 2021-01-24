@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
     Button btn_todo_list;
     Button btn_wikipedia_search;
+    Button btn_google_search;
     Button btn_formulas_cheatsheet;
     Button btn_pomodoro_timer;
     Button btn_useful_links;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn_todo_list = findViewById(R.id.btn_todo_list);
         btn_wikipedia_search = findViewById(R.id.btn_wikipedia_search);
+        btn_google_search = findViewById(R.id.btn_google_search);
         btn_formulas_cheatsheet = findViewById(R.id.btn_formulas_cheatsheet);
         btn_pomodoro_timer = findViewById(R.id.btn_pomodoro_timer);
         btn_useful_links = findViewById(R.id.btn_useful_links);
@@ -64,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, WikipediaSearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_google_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GoogleSearchActivity.class);
                 startActivity(intent);
             }
         });

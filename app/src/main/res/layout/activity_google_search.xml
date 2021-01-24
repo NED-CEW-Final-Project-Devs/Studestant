@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WikipediaSearchActivity"
+    android:orientation="vertical" >
+
+    <!--HEADER START-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtview_googlepedia_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google_search"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:background="@color/yellow"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+    <!--HEADER END-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/google_logo"
+            android:layout_width="349dp"
+            android:layout_height="161dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginLeft="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginRight="42dp"
+            android:layout_marginBottom="428dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtview_home"
+            app:layout_constraintVertical_bias="0.806"
+            app:srcCompat="@drawable/google_search" />
+
+        <EditText
+            android:id="@+id/editText_google"
+            android:layout_width="352dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="340dp"
+            android:gravity="center_horizontal"
+            android:hint="Write Here to Search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtview_home"
+            app:layout_constraintVertical_bias="0.981" />
+
+        <Button
+            android:id="@+id/button_google"
+            android:layout_width="229dp"
+            android:layout_height="64dp"
+            android:backgroundTint="@color/green"
+            android:layout_marginTop="4dp"
+            android:onClick="btnclick"
+            android:text="Search"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_google" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
