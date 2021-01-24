@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
-        <activity android:name=".UsefulLinks"></activity>
+        <activity android:name=".PomodoroWork"
+            android:parentActivityName=".PomodoroTimerActivity"/>
+        <activity android:name=".PomodoroRest"
+            android:parentActivityName=".PomodoroTimerActivity"/>
+        <activity android:name=".UsefulLinks"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".FormulasCheatsheetActivity"
             android:parentActivityName=".MainActivity" />
