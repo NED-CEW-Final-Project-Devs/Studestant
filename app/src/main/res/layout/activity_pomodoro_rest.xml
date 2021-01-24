@@ -36,19 +36,19 @@
 
         <TextView
             android:id="@+id/tv_ttr"
-            android:layout_width="379dp"
-            android:layout_height="79dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
             android:layout_marginLeft="72dp"
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
-            android:layout_marginBottom="464dp"
             android:gravity="center_horizontal"
             android:text="Time to Rest"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="9mm"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="45sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_pr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -56,12 +56,12 @@
             android:id="@+id/tv_pr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="205dp"
             android:text="00 : 00"
-            android:textSize="15mm"
+            android:textSize="100sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
         </TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>

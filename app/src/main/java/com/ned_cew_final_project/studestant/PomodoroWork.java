@@ -43,7 +43,7 @@ public class PomodoroWork extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                
                 finish();  //when timer finishes the , then the activity will close
 
 
