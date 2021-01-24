@@ -7,4 +7,7 @@
     <string name="home">Home</string>
     <string name="sign_out">Sign out</string>
     <string name="useful_links">Useful Links</string>
+    <string name="btn_Basicformulas">Basic Formulas</string>
+    <string name="btn_Trigonometryformulas">Trigonometry Formulas</string>
+    <string name="btn_Physicsformulas">Physics Formulas</string>
 </resources>
