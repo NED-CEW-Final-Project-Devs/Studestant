@@ -30,25 +30,26 @@
 
     </LinearLayout>
     <!--HEADER END-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_ttw"
-            android:layout_width="367dp"
-            android:layout_height="76dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
             android:layout_marginLeft="72dp"
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
-            android:layout_marginBottom="464dp"
             android:gravity="center_horizontal"
             android:text="Time to Work"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="9mm"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="45sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_pw"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -56,12 +57,12 @@
             android:id="@+id/tv_pw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="205dp"
             android:text="00 : 00"
-            android:textSize="15mm"
+            android:textSize="100sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
         </TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
