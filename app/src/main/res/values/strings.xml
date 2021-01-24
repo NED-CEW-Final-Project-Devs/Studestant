@@ -7,4 +7,42 @@
     <string name="home">Home</string>
     <string name="sign_out">Sign out</string>
     <string name="useful_links">Useful Links</string>
+
+    <!--    For Useful links-->
+<!--    Mosh YT channel-->
+    <string name="moshName">Mosh</string>
+    <string name="moshDes">Youtube channel to learn programming</string>
+    <string name="moshLink">
+        <a href='https://www.youtube.com/user/programmingwithmosh'>Click Here</a>
+    </string>
+
+<!--    w3Schools-->
+    <string name="w3Name">w3Schools</string>
+    <string name="w3Des">Website for learning web technologies</string>
+    <string name="w3Link">
+        <a href='https://www.w3schools.com/'>Click Here</a>
+    </string>
+
+<!--    Grammarly-->
+    <string name="grammalyName">Grammarly</string>
+    <string name="grammalyDes">Online writing Assistance tool</string>
+    <string name="grammalyLink">
+        <a href='https://app.grammarly.com/'>Click Here</a>
+    </string>
+
+<!--    Stack over flow-->
+    <string name="stackName">Stack Over Flow</string>
+    <string name="stackDes">Online community for developers</string>
+    <string name="stackLink">
+        <a href='https://www.stackoverflow.com/'>Click Here</a>
+    </string>
+
+
+<!--    Khan Academy-->
+    <string name="kAcadName">Khan Academy</string>
+    <string name="kAcadDes">Free video courses on academic subjects</string>
+    <string name="kAcadLink">
+        <a href='https://www.khanacademy.org/'>Click Here</a>
+    </string>
+
 </resources>
