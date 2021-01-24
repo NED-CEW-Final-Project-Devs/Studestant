@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ned_cew_final_project.studestant">
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +28,7 @@
         <activity
             android:name=".PomodoroWork"
             android:parentActivityName=".PomodoroTimerActivity" />
+
         <activity
             android:name=".PomodoroRest"
             android:parentActivityName=".PomodoroTimerActivity" />
@@ -52,6 +53,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".Tone_Service"/>
     </application>
 
 </manifest>
