@@ -48,4 +48,5 @@
     <string name="btn_Basicformulas">Basic Formulas</string>
     <string name="btn_Trigonometryformulas">Trigonometry Formulas</string>
     <string name="btn_Physicsformulas">Physics Formulas</string>
+    <string name="google_search">Google Search</string>
 </resources>

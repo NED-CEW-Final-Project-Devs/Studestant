@@ -65,10 +65,10 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/btn_wikipedia_search"
+            android:id="@+id/btn_pomodoro_timer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/wikipedia_search"
+            android:text="@string/pomodoro_timer"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
             android:textAllCaps="false" />
@@ -83,13 +83,24 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/btn_pomodoro_timer"
+            android:id="@+id/btn_wikipedia_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pomodoro_timer"
+            android:text="@string/wikipedia_search"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_google_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google_search"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textAllCaps="false" />
+
+
 
         <Button
             android:id="@+id/btn_useful_links"
