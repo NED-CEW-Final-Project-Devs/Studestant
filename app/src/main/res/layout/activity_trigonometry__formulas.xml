@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    tools:context=".Trigonometry_Formulas">
+
+    <TextView
+        android:id="@+id/tv_trigonometryformulas"
+        android:layout_width="402dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="22dp"
+        android:background="@color/teal_200"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/btn_Trigonometryformulas"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/img_sin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_sin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/tf1"
+        app:layout_constraintBottom_toTopOf="@+id/img_tan"
+        app:layout_constraintEnd_toStartOf="@+id/img_cos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_trigonometryformulas" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_cos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="39dp"
+        android:src="@drawable/tf2"
+        app:layout_constraintBottom_toTopOf="@+id/img_tan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_sin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_trigonometryformulas" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_tan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/tf3"
+        app:layout_constraintBottom_toTopOf="@+id/img_sc"
+        app:layout_constraintEnd_toStartOf="@+id/img_csc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_sin" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_csc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="38dp"
+        android:src="@drawable/tf4"
+        app:layout_constraintBottom_toTopOf="@+id/img_sc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_tan"
+        app:layout_constraintTop_toBottomOf="@+id/img_cos" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_sc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="42dp"
+        android:src="@drawable/tf5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_cot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_tan" />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_cot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="42dp"
+        android:src="@drawable/tf6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_sc"
+        app:layout_constraintTop_toBottomOf="@+id/img_tan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
