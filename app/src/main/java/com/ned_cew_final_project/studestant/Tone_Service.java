@@ -17,7 +17,7 @@ public class Tone_Service extends Service {  //Service
     //start service
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        player = MediaPlayer.create(this, Settings.System.DEFAULT_NOTIFICATION_URI);
+        player = MediaPlayer.create(this, R.raw.alarm);
 
 // It will start the player
         player.start();
