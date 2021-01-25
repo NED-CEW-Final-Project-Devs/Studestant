@@ -1,6 +1,9 @@
 package com.ned_cew_final_project.studestant;
 
 import android.content.Intent;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.StrikethroughSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +41,16 @@ public class TodoAdapter extends FirestoreRecyclerAdapter<TodoItem, TodoAdapter.
 
     @Override
     protected void onBindViewHolder(@NonNull TodoHolder holder, int position, @NonNull TodoItem model) {
-        holder.txtview_title.setText(model.getTitle());
-        holder.txtview_details.setText(model.getDetails());
+        SpannableString title_text = new SpannableString(model.getTitle());
+        SpannableString details_text = new SpannableString(model.getDetails());
+        if (model.getIsDone()) // if to-do item is marked as done, set its title and details to strikethrough texts
+        {
+            title_text.setSpan(new StrikethroughSpan(), 0, title_text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            details_text.setSpan(new StrikethroughSpan(), 0, details_text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+
+        holder.txtview_title.setText(title_text);
+        holder.txtview_details.setText(details_text);
         holder.checkBox_isDone.setChecked(model.getIsDone());
     }
 
