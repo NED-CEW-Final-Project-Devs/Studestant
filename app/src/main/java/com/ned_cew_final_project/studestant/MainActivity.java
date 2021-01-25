@@ -3,6 +3,7 @@ package com.ned_cew_final_project.studestant;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startActivity(new Intent(this, SplashScreenActivity.class));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         btn_todo_list = findViewById(R.id.btn_todo_list);
         btn_wikipedia_search = findViewById(R.id.btn_wikipedia_search);
         btn_google_search = findViewById(R.id.btn_google_search);
@@ -113,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.GoogleBuilder().build(),
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.PhoneBuilder().build());
+                new AuthUI.IdpConfig.EmailBuilder().build());
+//                new AuthUI.IdpConfig.PhoneBuilder().build()
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
