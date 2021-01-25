@@ -65,8 +65,7 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:drawableEnd="@drawable/ic_pomo_timer"
-            android:drawableRight="@drawable/ic_pomo_timer" />
+            android:drawableEnd="@drawable/ic_pomo_timer" />
 
         <Button
             android:id="@+id/btn_todo_list"
@@ -77,8 +76,7 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:drawableEnd="@drawable/ic_todo_list"
-            android:drawableRight="@drawable/ic_todo_list" />
+            android:drawableEnd="@drawable/ic_todo_list"/>
 
         <Button
             android:id="@+id/btn_formulas_cheatsheet"
@@ -89,8 +87,7 @@
             android:textSize="20sp"
             android:textAllCaps="false"
             android:textAlignment="viewStart"
-            android:drawableEnd="@drawable/ic_formulas"
-            android:drawableRight="@drawable/ic_formulas" />
+            android:drawableEnd="@drawable/ic_formulas"/>
 
         <Button
             android:id="@+id/btn_wikipedia_search"
@@ -101,8 +98,7 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:drawableEnd="@drawable/ic_wiki"
-            android:drawableRight="@drawable/ic_wiki" />
+            android:drawableEnd="@drawable/ic_wiki"/>
 
         <Button
             android:id="@+id/btn_google_search"
@@ -113,8 +109,7 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:drawableEnd="@drawable/ic_google"
-            android:drawableRight="@drawable/ic_google" />
+            android:drawableEnd="@drawable/ic_google"/>
 
         <Button
             android:id="@+id/btn_useful_links"
@@ -125,8 +120,7 @@
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textAllCaps="false"
-            android:drawableEnd="@drawable/ic_useful_links"
-            android:drawableRight="@drawable/ic_useful_links" />
+            android:drawableEnd="@drawable/ic_useful_links"/>
 
     </LinearLayout>
 
