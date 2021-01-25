@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startActivity(new Intent(this, SplashScreenActivity.class));
         btn_todo_list = findViewById(R.id.btn_todo_list);
         btn_wikipedia_search = findViewById(R.id.btn_wikipedia_search);
         btn_google_search = findViewById(R.id.btn_google_search);

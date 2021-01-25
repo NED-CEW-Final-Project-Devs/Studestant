@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
-        <activity android:name=".GoogleSearchActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/Theme.Studestant.Fullscreen"></activity>
+        <activity
+            android:name=".GoogleSearchActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TodoEditorActivity"
             android:parentActivityName=".TodoListActivity" />
