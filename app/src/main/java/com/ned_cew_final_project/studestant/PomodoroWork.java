@@ -1,7 +1,7 @@
 package com.ned_cew_final_project.studestant;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
@@ -25,7 +25,6 @@ public class PomodoroWork extends AppCompatActivity {
         setContentView(R.layout.activity_pomodoro_work);
 
         tv_j_work= (TextView)findViewById(R.id.tv_pw);
-
         start_timer();
 
 
@@ -43,7 +42,9 @@ public class PomodoroWork extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                
+                Intent intent_notify=new Intent(PomodoroWork.this, Tone_Service.class);
+                startService(intent_notify);     //play the notification Sound
+
                 finish();  //when timer finishes the , then the activity will close
 
 
@@ -51,6 +52,7 @@ public class PomodoroWork extends AppCompatActivity {
         }.start();
 
     }
+
 
 
 
@@ -62,6 +64,8 @@ public class PomodoroWork extends AppCompatActivity {
 
         tv_j_work.setText(time_left_format);
     }
+
+
 
 
 }
