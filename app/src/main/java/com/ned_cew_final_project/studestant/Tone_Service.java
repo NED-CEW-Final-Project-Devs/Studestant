@@ -26,6 +26,10 @@ public class Tone_Service extends Service {  //Service
         return START_REDELIVER_INTENT;
     }
 
-
-
+    @Override
+    public void onDestroy() {
+        player.stop();
+        player.release();
+        super.onDestroy();
+    }
 }
