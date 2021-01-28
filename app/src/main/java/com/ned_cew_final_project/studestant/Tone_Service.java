@@ -19,7 +19,7 @@ public class Tone_Service extends Service {  //Service
     public int onStartCommand(Intent intent, int flags, int startId) {
         player = MediaPlayer.create(this, R.raw.alarm);
 
-// It will start the player
+        // It will start the player
         player.start();
         Toast.makeText(this, "The Time is up", Toast.LENGTH_LONG).show();
 
