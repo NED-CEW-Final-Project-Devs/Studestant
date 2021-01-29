@@ -41,7 +41,6 @@ public class UsefulLinks extends AppCompatActivity {
         TextView tv_kAcadLink = findViewById(R.id.tv_kAcadLink);
         tv_kAcadLink.setMovementMethod(LinkMovementMethod.getInstance());
 
-
     }
 }
 
