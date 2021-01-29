@@ -13,7 +13,7 @@
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
-            android:theme="@style/Theme.Studestant.Fullscreen"></activity>
+            android:theme="@style/Theme.Studestant.Fullscreen" />
         <activity
             android:name=".GoogleSearchActivity"
             android:parentActivityName=".MainActivity" />
@@ -60,6 +60,7 @@
             </intent-filter>
         </activity>
         <service android:name=".Tone_Service"/>
+        <service android:name=".PomodoroTimerService"/>
     </application>
 
 </manifest>

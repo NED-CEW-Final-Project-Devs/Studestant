@@ -2,7 +2,10 @@ package com.ned_cew_final_project.studestant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -13,7 +16,7 @@ import java.util.Locale;
 
 public class PomodoroRest extends AppCompatActivity {
 
-    public static final long start_time_ms= 300000;
+    public static final long start_time_ms = 300000;
     TextView tv_time_to_rest;
     TextView tv_j_rest;
     CountDownTimer countdown_timer;
@@ -30,36 +33,57 @@ public class PomodoroRest extends AppCompatActivity {
 
         tv_time_to_rest.setText("Time to rest");
 
-        start_timer();
+        Intent timer_service_intent = new Intent(PomodoroRest.this, PomodoroTimerService.class);
+        timer_service_intent.putExtra("start_time_ms", start_time_ms);
+        startService(timer_service_intent);
     }
 
-
-
-    public void start_timer() {
-        countdown_timer= new CountDownTimer(left_time,1000) {  //1000ms= 1 second interval
-            @Override
-            public void onTick(long millisUntilFinished) {
-                left_time= millisUntilFinished;
-                update_countdown_text(); //updated the text view of timer
-
-            }
-
-            @Override
-            public void onFinish() {
-                Intent intent_notify = new Intent(PomodoroRest.this, Tone_Service.class);
-                startService(intent_notify);  //play the notification Sound
-                tv_time_to_rest.setText("Time's Up!\nGo back and start the work timer.");
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        stopService(intent_notify);
-                    }
-                }, 2500);  // stop music player service after 2.5 seconds
-            }
-        }.start();
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(br, new IntentFilter(PomodoroTimerService.COUNTDOWN_BROADCAST));
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(br);
+    }
+
+    @Override
+    public void onStop() {
+        try {
+            unregisterReceiver(br);
+        } catch (Exception e) {
+            // Receiver was probably already stopped in onPause()
+        }
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroy() {
+        stopService(new Intent(this, PomodoroTimerService.class));
+        super.onDestroy();
+    }
+
+    private BroadcastReceiver br = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.hasExtra("time_left"))
+            {
+                left_time = intent.getLongExtra("time_left", 0);
+                update_countdown_text();
+
+            }
+            if (intent.hasExtra("time_up"))
+            {
+                if (intent.getBooleanExtra("time_up", false))
+                {
+                    tv_time_to_rest.setText("Time's Up!\nGo back and start the work timer.");
+                }
+            }
+        }
+    };
 
 
     public void update_countdown_text() {
@@ -69,6 +93,5 @@ public class PomodoroRest extends AppCompatActivity {
         String time_left_format = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
 
         tv_j_rest.setText(time_left_format);
-
     }
 }

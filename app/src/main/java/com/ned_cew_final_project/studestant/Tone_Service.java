@@ -21,8 +21,7 @@ public class Tone_Service extends Service {  //Service
 
         // It will start the player
         player.start();
-        Toast.makeText(this, "The Time is up", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(this, "Pomodoro timer finished", Toast.LENGTH_LONG).show();
         return START_REDELIVER_INTENT;
     }
 
