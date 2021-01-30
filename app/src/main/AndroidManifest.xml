@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ned_cew_final_project.studestant">
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,11 +10,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
         <activity android:name=".Basic2_Formulas"></activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/Theme.Studestant.Fullscreen"></activity>
+        <activity
+            android:name=".GoogleSearchActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TodoEditorActivity"
+            android:parentActivityName=".TodoListActivity" />
+        <activity
+            android:name=".TodoAdderActivity"
+            android:parentActivityName=".TodoListActivity" />
+        <activity
+            android:name=".TodoListActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".Physics2_Formulas" />
         <activity android:name=".Physics_Formulas" />
         <activity android:name=".Trigonometry_Formulas" />
         <activity android:name=".Basic_Formulas" />
-        <activity android:name=".UsefulLinks" />
+        <activity
+            android:name=".PomodoroWork"
+            android:parentActivityName=".PomodoroTimerActivity" />
+
+        <activity
+            android:name=".PomodoroRest"
+            android:parentActivityName=".PomodoroTimerActivity" />
+        <activity
+            android:name=".UsefulLinks"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FormulasCheatsheetActivity"
             android:parentActivityName=".MainActivity" />
@@ -25,15 +52,15 @@
             android:name=".WikipediaSearchActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".TodoListActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".Tone_Service"/>
     </application>
 
 </manifest>
