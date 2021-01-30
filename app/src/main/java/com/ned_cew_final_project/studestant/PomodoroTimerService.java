@@ -61,6 +61,6 @@ public class PomodoroTimerService  extends Service {
         }.start();
 
         countdown_timer.start();
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
     }
 }

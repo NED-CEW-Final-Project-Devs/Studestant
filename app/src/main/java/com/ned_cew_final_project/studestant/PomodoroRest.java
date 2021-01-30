@@ -16,6 +16,8 @@ import java.util.Locale;
 
 public class PomodoroRest extends AppCompatActivity {
 
+    Intent timer_service_intent;
+
     public static final long start_time_ms = 300000;
     TextView tv_time_to_rest;
     TextView tv_j_rest;
@@ -33,7 +35,7 @@ public class PomodoroRest extends AppCompatActivity {
 
         tv_time_to_rest.setText("Time to rest");
 
-        Intent timer_service_intent = new Intent(PomodoroRest.this, PomodoroTimerService.class);
+        timer_service_intent = new Intent(PomodoroRest.this, PomodoroTimerService.class);
         timer_service_intent.putExtra("start_time_ms", start_time_ms);
         startService(timer_service_intent);
     }
@@ -62,8 +64,24 @@ public class PomodoroRest extends AppCompatActivity {
 
     @Override
     public void onDestroy() {
-        stopService(new Intent(this, PomodoroTimerService.class));
+        try {
+            unregisterReceiver(br);
+        } catch (Exception e) {
+            // Receiver was probably already stopped in onPause()
+        }
+        stopService(timer_service_intent);
         super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        try {
+            unregisterReceiver(br);
+        } catch (Exception e) {
+            // Receiver was probably already stopped in onPause()
+        }
+        stopService(timer_service_intent);
+        super.onBackPressed();
     }
 
     private BroadcastReceiver br = new BroadcastReceiver() {
