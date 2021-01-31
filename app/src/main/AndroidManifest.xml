@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Studestant">
-        <activity android:name=".Basic2_Formulas"></activity>
+        <activity android:name=".Basic2_Formulas"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".FormulasCheatsheetActivity" />
         <activity
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -34,12 +36,17 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".Physics2_Formulas"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".FormulasCheatsheetActivity" />
         <activity android:name=".Physics_Formulas"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".FormulasCheatsheetActivity" />
         <activity android:name=".Trigonometry_Formulas"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Basic_Formulas" android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".FormulasCheatsheetActivity" />
+        <activity android:name=".Basic_Formulas"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".FormulasCheatsheetActivity" />
         <activity
             android:name=".PomodoroWork"
             android:parentActivityName=".PomodoroTimerActivity"
