@@ -1,8 +1,10 @@
 package com.ned_cew_final_project.studestant;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class TodoEditorActivity extends AppCompatActivity {
     FirebaseUser current_user;
     DocumentReference todo_item_reference;
+
+    AlertDialog.Builder alert_dialog_builder;
+    AlertDialog delete_alert_dialog;
 
     EditText et_todo_editor_title;
     EditText et_todo_editor_details;
@@ -65,6 +70,26 @@ public class TodoEditorActivity extends AppCompatActivity {
         et_todo_editor_title.setText(todo_title);
         et_todo_editor_details.setText(todo_details);
 
+        // building alert dialog for delete
+        alert_dialog_builder = new AlertDialog.Builder(this);
+        alert_dialog_builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                todo_item_reference.delete();
+                Toast.makeText(TodoEditorActivity.this, "Item deleted", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+        alert_dialog_builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // pass
+            }
+        });
+        alert_dialog_builder.setTitle("Are you sure you want to delete this item?");
+        alert_dialog_builder.setIcon(R.drawable.ic_warning);
+        delete_alert_dialog = alert_dialog_builder.create();
+
         findViewById(R.id.btn_todo_editor_cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,21 +107,21 @@ public class TodoEditorActivity extends AppCompatActivity {
         findViewById(R.id.btn_todo_editor_delete).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(TodoEditorActivity.this, "Long press to delete.\n" +
-                        "WARNING: THIS ACTION CAN NOT BE UNDONE.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(TodoEditorActivity.this, "Long press to delete.\n" +
+//                        "WARNING: THIS ACTION CAN NOT BE UNDONE.", Toast.LENGTH_SHORT).show();
+                delete_alert_dialog.show();
             }
         });
 
-        findViewById(R.id.btn_todo_editor_delete).setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                todo_item_reference.delete();
-                finish();
-                Toast.makeText(TodoEditorActivity.this, "Item deleted", Toast.LENGTH_SHORT).show();
-                finish();
-                return true;
-            }
-        });
+//        findViewById(R.id.btn_todo_editor_delete).setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                todo_item_reference.delete();
+//                Toast.makeText(TodoEditorActivity.this, "Item deleted", Toast.LENGTH_SHORT).show();
+//                finish();
+//                return true;
+//            }
+//        });
     }
 
 
