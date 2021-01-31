@@ -14,46 +14,60 @@
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
-            android:theme="@style/Theme.Studestant.Fullscreen"></activity>
+            android:theme="@style/Theme.Studestant.Fullscreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GoogleSearchActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TodoEditorActivity"
-            android:parentActivityName=".TodoListActivity" />
+            android:parentActivityName=".TodoListActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TodoAdderActivity"
-            android:parentActivityName=".TodoListActivity" />
+            android:parentActivityName=".TodoListActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TodoListActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Physics2_Formulas" />
-        <activity android:name=".Physics_Formulas" />
-        <activity android:name=".Trigonometry_Formulas" />
-        <activity android:name=".Basic_Formulas" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Physics2_Formulas"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Physics_Formulas"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Trigonometry_Formulas"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Basic_Formulas" android:screenOrientation="portrait" />
         <activity
             android:name=".PomodoroWork"
-            android:parentActivityName=".PomodoroTimerActivity" />
-
+            android:parentActivityName=".PomodoroTimerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PomodoroRest"
-            android:parentActivityName=".PomodoroTimerActivity" />
+            android:parentActivityName=".PomodoroTimerActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UsefulLinks"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FormulasCheatsheetActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PomodoroTimerActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".WikipediaSearchActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
