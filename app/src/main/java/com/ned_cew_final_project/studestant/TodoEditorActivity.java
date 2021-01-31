@@ -1,6 +1,7 @@
 package com.ned_cew_final_project.studestant;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class TodoEditorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo_editor);
         setTitle("Edit");
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);  // Disable darkmode
 
         current_user = FirebaseAuth.getInstance().getCurrentUser();
         if (current_user == null)  // if not logged in

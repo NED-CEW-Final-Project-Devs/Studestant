@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startActivity(new Intent(this, SplashScreenActivity.class));
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);  // Disable darkmode
         btn_todo_list = findViewById(R.id.btn_todo_list);
         btn_wikipedia_search = findViewById(R.id.btn_wikipedia_search);
         btn_google_search = findViewById(R.id.btn_google_search);

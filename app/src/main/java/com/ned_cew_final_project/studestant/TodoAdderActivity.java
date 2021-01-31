@@ -1,6 +1,7 @@
 package com.ned_cew_final_project.studestant;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class TodoAdderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo_adder);
         setTitle("Add new todo item");
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);  // Disable darkmode
         et_todo_adder_title = findViewById(R.id.edittxt_todo_adder_title);
         et_todo_adder_details = findViewById(R.id.edittxt_todo_adder_details);
 

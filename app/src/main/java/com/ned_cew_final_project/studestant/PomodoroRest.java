@@ -1,6 +1,7 @@
 package com.ned_cew_final_project.studestant;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class PomodoroRest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pomodoro_rest);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);  // Disable darkmode
 
         tv_time_to_rest = findViewById(R.id.tv_ttr);
         tv_j_rest= (TextView)findViewById(R.id.tv_pr);
