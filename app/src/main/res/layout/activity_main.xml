@@ -17,18 +17,25 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/txtview_home"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/home"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:padding="10dp"
-            android:background="@color/yellow"
+            android:backgroundTint="@color/yellow"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp">
+            <TextView
+                android:id="@+id/txtview_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:background="@color/yellow" />
+        </com.google.android.material.card.MaterialCardView>
+
 
     </LinearLayout>
     <!--HEADER END-->
