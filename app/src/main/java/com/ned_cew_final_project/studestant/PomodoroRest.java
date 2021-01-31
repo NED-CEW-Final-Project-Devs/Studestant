@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
 
@@ -51,7 +52,8 @@ public class PomodoroRest extends AppCompatActivity {
                 Intent intent_notify = new Intent(PomodoroRest.this, Tone_Service.class);
                 startService(intent_notify);  //play the notification Sound
                 tv_time_to_rest.setText("Time's Up!\nGo back and start the work timer.");
-                new Handler().postDelayed(new Runnable() {
+                update_countdown_text();
+                new Handler(Looper.myLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         stopService(intent_notify);
