@@ -52,7 +52,7 @@
                 android:gravity="top"
                 android:hint="Details"
                 android:inputType="textMultiLine"
-                android:lines="7"
+                android:lines="20"
                 android:minLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
