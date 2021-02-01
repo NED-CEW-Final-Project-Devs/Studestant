@@ -19,8 +19,6 @@ public class FormulasCheatsheetActivity extends AppCompatActivity {
     public void basic_formulas(View view) {
         Intent intent=new Intent(FormulasCheatsheetActivity.this,Basic_Formulas.class);
         startActivity(intent);
-
-
     }
 
     public void trigonometry_formulas(View view) {

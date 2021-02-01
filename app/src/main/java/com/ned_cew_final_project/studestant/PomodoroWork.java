@@ -43,7 +43,6 @@ public class PomodoroWork extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 left_time= millisUntilFinished;
                 update_countdown_text();  //updated the text view of timer
-
             }
 
             @Override
